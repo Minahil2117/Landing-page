@@ -1,0 +1,212 @@
+:root {
+    --gold: #c5a059;
+    --dark: #1a1a1a;
+    --cream: #fdfaf5;
+}
+
+* { margin: 0; padding: 0; box-sizing: border-box; }
+
+body {
+    font-family: 'Montserrat', sans-serif;
+    background-color: var(--cream);
+    color: var(--dark);
+    line-height: 1.6;
+    overflow-x: hidden;
+}
+
+h1, h2, h3, .logo {
+    font-family: 'Cormorant Garamond', serif;
+    font-weight: 400;
+}
+
+/* Hero Section with Luxury Backdrop */
+.hero {
+    height: 100vh;
+    background: linear-gradient(rgba(0,0,0,0.4), rgba(0,0,0,0.4)), 
+                url('https://images.unsplash.com/photo-1592945403244-b3fbafd7f539?auto=format&fit=crop&q=80&w=1920') center/cover;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    color: white;
+    text-align: center;
+    padding: 20px;
+    background-attachment: fixed; /* Parallax effect */
+}
+
+nav {
+    position: absolute;
+    top: 0;
+    padding: 30px;
+    letter-spacing: 4px;
+    font-size: 1.5rem;
+}
+
+.hero-content h1 {
+    font-size: clamp(2.5rem, 8vw, 5rem);
+    margin: 10px 0;
+    font-style: italic;
+}
+
+.subtitle {
+    letter-spacing: 5px;
+    font-size: 0.9rem;
+    color: var(--gold);
+}
+
+.btn-primary {
+    display: inline-block;
+    margin-top: 30px;
+    padding: 15px 40px;
+    border: 1px solid white;
+    color: white;
+    text-decoration: none;
+    transition: 0.4s;
+    text-transform: uppercase;
+    font-size: 0.8rem;
+    letter-spacing: 2px;
+}
+
+.btn-primary:hover {
+    background: white;
+    color: black;
+}
+
+/* Notes Section */
+.notes-section {
+    padding: 100px 10%;
+    text-align: center;
+}
+
+.notes-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+    gap: 40px;
+    margin-top: 50px;
+}
+
+.note-img {
+    width: 100px;
+    height: 100px;
+    object-fit: cover;
+    border-radius: 50%;
+    margin-bottom: 20px;
+    border: 2px solid var(--gold);
+    padding: 5px;
+}
+
+.note-card {
+    padding: 40px;
+    background: white;
+    transition: 0.4s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+    box-shadow: 0 10px 30px rgba(0,0,0,0.03);
+}
+
+.note-card:hover {
+    transform: translateY(-15px);
+    box-shadow: 0 20px 40px rgba(0,0,0,0.1);
+}
+
+/* Features Section */
+.features {
+    display: flex;
+    flex-wrap: wrap;
+    background: #fff;
+    padding: 100px 10%;
+    align-items: center;
+    gap: 50px;
+}
+
+.feature-image, .feature-text {
+    flex: 1;
+    min-width: 300px;
+}
+
+/* Container to handle the zoom overflow */
+.image-container {
+    overflow: hidden;
+    border-radius: 8px;
+    box-shadow: 20px 20px 60px rgba(0,0,0,0.05);
+    background: white;
+}
+
+.main-bottle {
+    width: 100%;
+    max-width: 500px;
+    height: auto;
+    display: block;
+    transition: transform 0.8s cubic-bezier(0.25, 1, 0.5, 1); /* Smooth zoom */
+}
+
+/* Luxury Hover Effect */
+.image-container:hover .main-bottle {
+    transform: scale(1.1); /* Zoom in slightly when hovering */
+}
+
+.feature-image {
+    position: relative;
+    padding: 20px;
+}
+
+/* Adding a subtle gold accent behind your image */
+.feature-image::before {
+    content: "";
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 70%;
+    height: 70%;
+    background: var(--gold);
+    opacity: 0.1;
+    z-index: -1;
+    border-radius: 50%;
+}
+
+.main-bottle {
+    width: 100%;
+    max-width: 500px;
+    height: auto;
+    border-radius: 5px;
+    box-shadow: 30px 30px 0px var(--cream); /* Stylized shadow */
+}
+
+.offer-box {
+    margin-top: 40px;
+    padding: 40px;
+    background: var(--dark);
+    color: white;
+    border-left: 5px solid var(--gold);
+}
+
+.btn-secondary {
+    background: var(--gold);
+    color: white;
+    border: none;
+    padding: 12px 30px;
+    margin-top: 20px;
+    cursor: pointer;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+}
+
+/* Footer */
+footer {
+    padding: 80px 10%;
+    background: var(--cream);
+    text-align: center;
+}
+
+#newsletter input {
+    padding: 15px;
+    width: 300px;
+    border: 1px solid #ccc;
+    margin-bottom: 10px;
+}
+
+#newsletter button {
+    padding: 15px 30px;
+    background: var(--dark);
+    color: white;
+    border: none;
+    cursor: pointer;
+}
